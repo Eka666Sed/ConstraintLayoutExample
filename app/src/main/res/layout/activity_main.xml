@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -29,26 +30,48 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:hint="Имя"
         android:inputType="textPersonName"
         android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/nameTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/nameTextView"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/nameTextView" />
 
     <EditText
         android:id="@+id/nicknameEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_goneMarginStart="32dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:hint="Никнейм"
         android:inputType="textPersonName"
         android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/nickNameTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/nickNameTextView"
-        app:layout_constraintTop_toBottomOf="@id/nameEditText" />
+        app:layout_constraintStart_toEndOf="@+id/cameraImageView" />
+
+    <ImageView
+        android:id="@+id/cameraImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/nickNameTextView"
+        app:layout_constraintStart_toEndOf="@+id/nickNameTextView"
+        app:layout_constraintTop_toTopOf="@+id/nickNameTextView"
+        app:srcCompat="@android:drawable/ic_menu_camera"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/versionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="v1.000"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
